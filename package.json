@@ -1,0 +1,20 @@
+{
+  "name": "backendlearning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KacperFiga/backendJsLearning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KacperFiga/backendJsLearning/issues"
+  },
+  "homepage": "https://github.com/KacperFiga/backendJsLearning#readme"
+}
