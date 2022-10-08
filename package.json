@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/KacperFiga/backendJsLearning#readme",
   "dependencies": {
+    "date-format": "^4.0.14",
     "dotenv": "^16.0.3",
     "express": "^4.18.1"
   },

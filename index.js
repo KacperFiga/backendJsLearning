@@ -1,4 +1,5 @@
 const express = require("express");
+const format = require("date-format");
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.get("/api/v1/instagram", (req, res) => {
     username: "Figo",
     followers: 2137,
     follows: 3127,
-    date: Date.now(),
+    date: format.asString("dd[MM] - hh:mm:ss ", new Date()),
   };
   res.status(200).json(data);
 });
@@ -23,7 +24,7 @@ app.get("/api/v1/facebook", (req, res) => {
     username: "Figo",
     followers: 2137,
     follows: 3127,
-    date: Date.now(),
+    date: format.asString("dd[MM] - hh:mm:ss ", new Date()),
   };
   res.status(200).json(data);
 });
@@ -33,7 +34,7 @@ app.get("/api/v1/linkedin", (req, res) => {
     username: "Figo",
     followers: 2137,
     follows: 3127,
-    date: Date.now(),
+    date: format.asString("dd[MM] - hh:mm:ss ", new Date()),
   };
   res.status(200).json(data);
 });
