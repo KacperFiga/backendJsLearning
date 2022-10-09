@@ -1,7 +1,12 @@
 const express = require("express");
 const format = require("date-format");
+const YAML = require("yamljs");
+//swagger docs related
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = YAML.load("./swagger.yaml");
 
 const app = express();
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const PORT = process.env.PORT || 2137;
 
