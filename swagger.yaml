@@ -78,3 +78,26 @@ paths:
           description: Bad request
         "500":
           description: Internal server error
+  /courses:
+    get:
+      summary: Get all courses
+      responses:
+        "200":
+          description: All fine my friend
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    id:
+                      type: string
+                    price:
+                      type: number
+          "400":
+            description: Bad request
+          "500":
+            description: Internal server error
