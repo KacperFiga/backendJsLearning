@@ -9,8 +9,30 @@ const app = express();
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 const PORT = process.env.PORT || 2137;
 
+const courses = [
+  {
+    id: 11,
+    name: "learn reactjs",
+    price: 99,
+  },
+  {
+    id: 12,
+    name: "learn nodejs",
+    price: 132,
+  },
+  {
+    id: 13,
+    name: "learn Vue",
+    price: 2137,
+  },
+];
+
 app.get("/", (req, res) => {
   res.send("<h1>Hello world</h1>");
+});
+
+app.get("/api/v1/lco", (req, res) => {
+  res.send("<h1>Hello from lco docs</h1>");
 });
 
 app.get("/api/v1/instagram", (req, res) => {
