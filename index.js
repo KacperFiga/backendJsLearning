@@ -7,7 +7,6 @@ const swaggerDocument = YAML.load("./swagger.yaml");
 
 const app = express();
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 const PORT = process.env.PORT || 2137;
 
 app.get("/", (req, res) => {

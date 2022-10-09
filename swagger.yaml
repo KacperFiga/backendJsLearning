@@ -1,1 +1,79 @@
 openapi: 3.0.0
+info:
+  title: Social app
+  description: My first social app
+  version: 1.0.1
+servers:
+  - url: http://localhost:2137/api/v1
+    description: My localhost server
+  - url: https://localhost:2137/api/v1
+    description: It's doesn't work
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+    OpenID:
+      type: openIdConnect
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
+
+paths:
+  /instagram:
+    get:
+      summary: returns follows, followers and username
+      responses:
+        "200":
+          description: returns an object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers:
+                    type: string
+                  follows:
+                    type: string
+    post:
+      summary: returns follows, followers and username
+      responses:
+        "200":
+          description: returns an object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers:
+                    type: string
+                  follows:
+                    type: string
+  /{token}:
+    get:
+      summary: returns whatever is in the parameter
+      parameters:
+        - name: token
+          default: 5
+          in: path
+          schema:
+            type: string
+      responses:
+        "200":
+          description: returns an object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  params:
+                    type: string
