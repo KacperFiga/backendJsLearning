@@ -35,6 +35,10 @@ app.get("/api/v1/lco", (req, res) => {
   res.send("<h1>Hello from lco docs</h1>");
 });
 
+app.get("/api/v1/lcoobject", (req, res) => {
+  res.send({ name: "learn backend", id: 14, price: 2137 });
+});
+
 app.get("/api/v1/instagram", (req, res) => {
   const data = {
     username: "Figo",
