@@ -101,3 +101,29 @@ paths:
             description: Bad request
           "500":
             description: Internal server error
+  /mycourses/{id}:
+    get:
+      summary: returns a specified course with specified id
+      tags:
+        - Objects
+      parameters:
+        - name: id
+          in: path
+          required: true
+          default: 13
+          schema:
+            type: string
+      responses:
+        "200":
+          description: returns a course object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  id:
+                    type: string
+                  price:
+                    type: number

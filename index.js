@@ -11,17 +11,17 @@ const PORT = process.env.PORT || 2137;
 
 const courses = [
   {
-    id: 11,
+    id: "11",
     name: "learn reactjs",
     price: 99,
   },
   {
-    id: 12,
+    id: "12",
     name: "learn nodejs",
     price: 132,
   },
   {
-    id: 13,
+    id: "13",
     name: "learn Vue",
     price: 2137,
   },
@@ -41,6 +41,12 @@ app.get("/api/v1/lcoobject", (req, res) => {
 
 app.get("/api/v1/courses", (req, res) => {
   res.send(courses);
+});
+
+app.get("/api/v1/mycourses/:id", (req, res) => {
+  const course = courses.find((course) => course.id === req.params.id);
+  console.log(course);
+  res.send(course);
 });
 
 app.get("/api/v1/instagram", (req, res) => {
